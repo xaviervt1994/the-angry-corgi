@@ -3,29 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Angry Corgi Coffee Truck</title>
+    <title>ATX Cleaning - Professional Cleaning Services</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "atx-pink": "#E879A6",
+              "atx-rose": "#F4A6CD",
+              "atx-light": "#FDF2F8",
+              "atx-dark": "#BE185D",
+            },
+            fontFamily: {
+              display: ["Georgia", "serif"],
+            },
+          },
+        },
+      };
+    </script>
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
-
-      body {
-        font-family: "Quicksand", sans-serif;
-      }
-
-      .paw-print {
-        position: relative;
-      }
-
-      .paw-print::before {
-        content: "🐾";
-        margin-right: 0.5rem;
-        opacity: 0.7;
-      }
-
-      .floating {
-        animation: float 3s ease-in-out infinite;
-      }
-
       @keyframes float {
         0%,
         100% {
@@ -35,370 +32,608 @@
           transform: translateY(-10px);
         }
       }
-
-      .hover-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.5;
+          transform: scale(1.2);
+        }
       }
-
-      .hover-lift:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
       }
-
-      .bg-pattern {
-        background-image: radial-gradient(
-            circle at 25px 25px,
-            rgba(255, 182, 193, 0.1) 2px,
-            transparent 0
-          ),
-          radial-gradient(
-            circle at 75px 75px,
-            rgba(255, 182, 193, 0.05) 1px,
-            transparent 0
-          );
-        background-size: 100px 100px;
+      .sparkle {
+        animation: sparkle 2s ease-in-out infinite;
       }
-
-      .testimonial-card {
-        background: linear-gradient(135deg, #fff8f4 0%, #fdf9f4 100%);
-      }
-
-      .menu-item-card {
-        background: linear-gradient(135deg, #fff8f4 0%, #ffffff 100%);
-        border: 2px solid transparent;
-        transition: all 0.3s ease;
-      }
-
-      .menu-item-card:hover {
-        border-color: #ec4899;
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(236, 72, 153, 0.15);
+      .gradient-text {
+        background: linear-gradient(135deg, #e879a6, #be185d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
     </style>
   </head>
-  <body class="bg-[#f6f1eb] text-gray-800">
+  <body class="bg-gradient-to-br from-atx-light via-pink-50 to-rose-100">
     <!-- Header -->
-    <header
-      class="flex items-center justify-between p-4 bg-white shadow-lg sticky top-0 z-50"
-    >
-      <div class="flex items-center space-x-3">
-        <div
-          class="w-12 h-12 bg-gradient-to-br from-pink-300 to-pink-500 rounded-full flex items-center justify-center text-white font-bold text-lg"
-        >
-          🐕
-        </div>
-        <h1 class="text-xl font-semibold text-gray-800">The Angry Corgi</h1>
-      </div>
-      <nav>
-        <ul class="flex space-x-4 text-sm font-medium">
-          <li>
+    <header class="bg-white/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center sparkle"
+            >
+              <span class="text-white font-bold text-xl">✨</span>
+            </div>
+            <div>
+              <h1 class="text-2xl font-bold gradient-text">ATX Cleaning</h1>
+              <p class="text-sm text-gray-600">Professional & Reliable</p>
+            </div>
+          </div>
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#services"
+              class="text-gray-700 hover:text-atx-dark transition-colors duration-300 font-medium"
+              >Services</a
+            >
             <a
               href="#about"
-              class="hover:text-pink-600 transition-colors duration-200"
+              class="text-gray-700 hover:text-atx-dark transition-colors duration-300 font-medium"
               >About</a
             >
-          </li>
-          <li>
-            <a
-              href="#menu"
-              class="hover:text-pink-600 transition-colors duration-200"
-              >Menu</a
-            >
-          </li>
-          <li>
-            <a
-              href="#gallery"
-              class="hover:text-pink-600 transition-colors duration-200"
-              >Gallery</a
-            >
-          </li>
-          <li>
-            <a
-              href="#testimonials"
-              class="hover:text-pink-600 transition-colors duration-200"
-              >Reviews</a
-            >
-          </li>
-          <li>
-            <a
-              href="#location"
-              class="hover:text-pink-600 transition-colors duration-200"
-              >Location</a
-            >
-          </li>
-          <li>
             <a
               href="#contact"
-              class="hover:text-pink-600 transition-colors duration-200"
+              class="text-gray-700 hover:text-atx-dark transition-colors duration-300 font-medium"
               >Contact</a
             >
-          </li>
-        </ul>
-      </nav>
+          </nav>
+          <button class="md:hidden text-atx-pink">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </header>
 
-    <!-- Hero -->
-    <section
-      class="text-center py-20 bg-gradient-to-br from-[#fdf9f4] to-[#fff8f4] bg-pattern relative overflow-hidden"
-    >
-      <div class="floating absolute top-10 left-10 text-4xl opacity-30">☕</div>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
       <div
-        class="floating absolute top-20 right-20 text-3xl opacity-20"
-        style="animation-delay: -1s"
-      >
-        🧡
-      </div>
+        class="absolute inset-0 bg-gradient-to-br from-pink-100 via-rose-50 to-atx-light"
+      ></div>
       <div
-        class="floating absolute bottom-20 left-20 text-2xl opacity-25"
-        style="animation-delay: -2s"
-      >
-        🐾
-      </div>
+        class="absolute top-20 right-10 w-32 h-32 bg-atx-pink/20 rounded-full blur-3xl"
+      ></div>
+      <div
+        class="absolute bottom-20 left-10 w-48 h-48 bg-rose-300/20 rounded-full blur-3xl"
+      ></div>
 
-      <h2 class="text-5xl font-bold mb-4 text-gray-800">
-        Strong Drinks. Soft Vibes.
-      </h2>
-      <p class="text-xl text-gray-600 mb-2">
-        Coffee & comfort from a mom & daughter duo in Waco, TX
-      </p>
-      <p class="text-sm text-pink-600 mb-8 paw-print">
-        Fueled by love, caffeine, and one very opinionated corgi
-      </p>
-      <button
-        onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})"
-        class="mt-6 px-8 py-3 bg-gradient-to-r from-pink-500 to-pink-600 text-white rounded-full hover:from-pink-600 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 font-semibold shadow-lg"
-      >
-        View Our Menu ☕
-      </button>
-    </section>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div class="space-y-8">
+            <div class="space-y-4">
+              <h1 class="text-5xl lg:text-7xl font-bold leading-tight">
+                <span class="gradient-text">Need</span>
+                <br />
+                <span class="text-gray-800">Cleaning?</span>
+              </h1>
+              <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+                We're local, fast, and affordable – and we come to you!
+                <span class="text-atx-dark font-semibold"
+                  >Your home deserves to sparkle ✨</span
+                >
+              </p>
+            </div>
 
-    <!-- About -->
-    <section id="about" class="py-16 px-6 max-w-4xl mx-auto text-center">
-      <h3 class="text-4xl font-semibold mb-6 text-gray-800">
-        Meet The Angry Corgi
-      </h3>
-      <div class="bg-white p-8 rounded-2xl shadow-lg">
-        <p class="text-gray-700 text-lg mb-4">
-          We're a family-run coffee truck fueled by love, caffeine, and a corgi
-          with a lot of opinions. Every cup we serve is brewed with heart and
-          humor.
-        </p>
-        <p class="text-gray-600 text-base">
-          Started by a mom and daughter team who believe that great coffee
-          brings people together, one perfectly crafted drink at a time. Our
-          furry mascot may be angry, but our customers are always happy! 🐕‍🦺
-        </p>
-      </div>
-    </section>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#contact"
+                class="bg-gradient-to-r from-atx-pink to-atx-rose text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:shadow-pink-300/50 transform hover:scale-105 transition-all duration-300 text-center"
+              >
+                Get Free Quote
+              </a>
+              <button
+                class="border-2 border-atx-pink text-atx-dark px-8 py-4 rounded-full font-semibold text-lg hover:bg-atx-pink hover:text-white transition-all duration-300"
+              >
+                Call Now
+              </button>
+            </div>
 
-    <!-- Menu -->
-    <section id="menu" class="bg-white py-16 px-6">
-      <div class="max-w-6xl mx-auto text-center">
-        <h3 class="text-4xl font-semibold mb-8 text-gray-800">
-          Popular Drinks
-        </h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="menu-item-card hover-lift p-6 rounded-2xl shadow-md">
-            <div class="text-3xl mb-3">😤</div>
-            <h4 class="font-bold text-xl mb-2 text-gray-800">Angry Latte</h4>
-            <p class="text-sm text-gray-600 mb-3">
-              Rich espresso, steamed milk, hint of attitude.
-            </p>
-            <div class="text-pink-600 font-semibold text-lg">$4.50</div>
+            <div class="flex items-center space-x-8 pt-4">
+              <div class="text-center">
+                <div class="text-3xl font-bold gradient-text">100%</div>
+                <div class="text-sm text-gray-600">Satisfaction</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold gradient-text">5★</div>
+                <div class="text-sm text-gray-600">Reviews</div>
+              </div>
+              <div class="text-center">
+                <div class="text-3xl font-bold gradient-text">24hr</div>
+                <div class="text-sm text-gray-600">Response</div>
+              </div>
+            </div>
           </div>
-          <div class="menu-item-card hover-lift p-6 rounded-2xl shadow-md">
-            <div class="text-3xl mb-3">❄️</div>
-            <h4 class="font-bold text-xl mb-2 text-gray-800">
-              Corgi Cold Brew
-            </h4>
-            <p class="text-sm text-gray-600 mb-3">
-              Smooth, bold, and always chill.
-            </p>
-            <div class="text-pink-600 font-semibold text-lg">$3.75</div>
-          </div>
-          <div class="menu-item-card hover-lift p-6 rounded-2xl shadow-md">
-            <div class="text-3xl mb-3">🍫</div>
-            <h4 class="font-bold text-xl mb-2 text-gray-800">Mom's Mocha</h4>
-            <p class="text-sm text-gray-600 mb-3">
-              Chocolatey comfort with espresso love.
-            </p>
-            <div class="text-pink-600 font-semibold text-lg">$5.25</div>
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-          <div class="menu-item-card hover-lift p-6 rounded-2xl shadow-md">
-            <div class="text-3xl mb-3">🧊</div>
-            <h4 class="font-bold text-xl mb-2 text-gray-800">Puppy Frappé</h4>
-            <p class="text-sm text-gray-600 mb-3">
-              Sweet, creamy, and playful - perfect for treating yourself!
-            </p>
-            <div class="text-pink-600 font-semibold text-lg">$5.75</div>
-          </div>
-          <div class="menu-item-card hover-lift p-6 rounded-2xl shadow-md">
-            <div class="text-3xl mb-3">🫖</div>
-            <h4 class="font-bold text-xl mb-2 text-gray-800">Calming Chai</h4>
-            <p class="text-sm text-gray-600 mb-3">
-              Spiced tea blend to balance out all that corgi energy.
-            </p>
-            <div class="text-pink-600 font-semibold text-lg">$4.25</div>
+
+          <div class="relative float-animation">
+            <div class="relative">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-atx-pink/30 to-rose-400/30 rounded-3xl blur-2xl"
+              ></div>
+              <div
+                class="relative bg-white/60 backdrop-blur-lg rounded-3xl p-8 shadow-2xl"
+              >
+                <div class="grid grid-cols-2 gap-4">
+                  <div
+                    class="bg-gradient-to-br from-atx-light to-pink-100 rounded-2xl p-6 text-center"
+                  >
+                    <div class="text-4xl mb-2">🧽</div>
+                    <div class="font-semibold text-gray-800">Deep Clean</div>
+                  </div>
+                  <div
+                    class="bg-gradient-to-br from-rose-100 to-pink-100 rounded-2xl p-6 text-center"
+                  >
+                    <div class="text-4xl mb-2">✨</div>
+                    <div class="font-semibold text-gray-800">Sparkle</div>
+                  </div>
+                  <div
+                    class="bg-gradient-to-br from-pink-100 to-atx-light rounded-2xl p-6 text-center"
+                  >
+                    <div class="text-4xl mb-2">🌸</div>
+                    <div class="font-semibold text-gray-800">Fresh</div>
+                  </div>
+                  <div
+                    class="bg-gradient-to-br from-atx-light to-rose-100 rounded-2xl p-6 text-center"
+                  >
+                    <div class="text-4xl mb-2">💕</div>
+                    <div class="font-semibold text-gray-800">Love</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Gallery -->
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">
+            Our Services
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            From basic maintenance to deep cleaning transformations, we've got
+            every corner covered
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="bg-gradient-to-br from-atx-light to-pink-50 rounded-3xl p-8 hover:shadow-2xl hover:shadow-pink-200/50 transition-all duration-300 hover:scale-105 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-atx-pink to-atx-rose rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="text-white text-2xl">🏠</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Basic Cleans</h3>
+            <p class="text-gray-600 mb-4">
+              Regular maintenance cleaning to keep your home fresh and tidy
+            </p>
+            <div class="text-atx-pink font-semibold">Starting at $80</div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl p-8 hover:shadow-2xl hover:shadow-pink-200/50 transition-all duration-300 hover:scale-105 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-atx-rose to-atx-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="text-white text-2xl">✨</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Deep Cleans</h3>
+            <p class="text-gray-600 mb-4">
+              Thorough top-to-bottom cleaning for that fresh start feeling
+            </p>
+            <div class="text-atx-pink font-semibold">Starting at $150</div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-pink-50 to-atx-light rounded-3xl p-8 hover:shadow-2xl hover:shadow-pink-200/50 transition-all duration-300 hover:scale-105 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-atx-dark to-atx-pink rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="text-white text-2xl">📦</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+              Move-Out Cleans
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Get your deposit back with our comprehensive move-out service
+            </p>
+            <div class="text-atx-pink font-semibold">Starting at $200</div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-atx-light to-rose-50 rounded-3xl p-8 hover:shadow-2xl hover:shadow-pink-200/50 transition-all duration-300 hover:scale-105 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-atx-pink to-atx-rose rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="text-white text-2xl">🚗</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+              Garage Clean Outs
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Transform your cluttered garage into organized, usable space
+            </p>
+            <div class="text-atx-pink font-semibold">Custom Quote</div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-rose-50 to-atx-light rounded-3xl p-8 hover:shadow-2xl hover:shadow-pink-200/50 transition-all duration-300 hover:scale-105 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-atx-rose to-atx-dark rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="text-white text-2xl">👕</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">
+              Laundry Service
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Wash, fold, and organize your laundry with care
+            </p>
+            <div class="text-atx-pink font-semibold">$3/lb</div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl p-8 hover:shadow-2xl hover:shadow-pink-200/50 transition-all duration-300 hover:scale-105 group"
+          >
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-atx-dark to-atx-rose rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300"
+            >
+              <span class="text-white text-2xl">🌺</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Flower Beds</h3>
+            <p class="text-gray-600 mb-4">
+              Beautify your outdoor space with garden maintenance
+            </p>
+            <div class="text-atx-pink font-semibold">Starting at $60</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
     <section
-      id="gallery"
-      class="py-16 px-6 bg-gradient-to-br from-[#fdf9f4] to-[#f6f1eb]"
+      id="about"
+      class="py-20 bg-gradient-to-br from-atx-light via-pink-50 to-rose-100"
     >
-      <div class="max-w-6xl mx-auto text-center">
-        <h3 class="text-4xl font-semibold mb-8 text-gray-800">
-          Coffee Truck Life
-        </h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="bg-gradient-to-br from-pink-100 to-pink-200 rounded-2xl p-8 hover-lift h-48 flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div class="text-4xl mb-2">🚚</div>
-              <p class="text-gray-700 font-medium">Our Mobile Café</p>
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-6">
+                About ATX Cleaning
+              </h2>
+              <div class="space-y-6 text-lg text-gray-700 leading-relaxed">
+                <p>
+                  We're a
+                  <span class="text-atx-dark font-semibold"
+                    >woman-owned business</span
+                  >
+                  based in the heart of Texas, dedicated to providing reliable
+                  and respectful cleaning services that go beyond the ordinary.
+                </p>
+                <p>
+                  Your home is your sanctuary, and it deserves love, care, and
+                  that special sparkle that makes it truly shine. We're here to
+                  give it exactly that – with attention to detail, eco-friendly
+                  products, and a personal touch that makes all the difference.
+                </p>
+                <p>
+                  <span class="text-atx-dark font-semibold"
+                    >Quality isn't just what we do – it's who we are.</span
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div
+                class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center"
+              >
+                <div class="text-3xl mb-2">🏆</div>
+                <div class="font-bold text-atx-dark">Licensed & Insured</div>
+              </div>
+              <div
+                class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center"
+              >
+                <div class="text-3xl mb-2">🌱</div>
+                <div class="font-bold text-atx-dark">Eco-Friendly</div>
+              </div>
+              <div
+                class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center"
+              >
+                <div class="text-3xl mb-2">⏰</div>
+                <div class="font-bold text-atx-dark">Always On Time</div>
+              </div>
+              <div
+                class="bg-white/70 backdrop-blur-sm rounded-2xl p-6 text-center"
+              >
+                <div class="text-3xl mb-2">💯</div>
+                <div class="font-bold text-atx-dark">
+                  Satisfaction Guaranteed
+                </div>
+              </div>
             </div>
           </div>
-          <div
-            class="bg-gradient-to-br from-orange-100 to-orange-200 rounded-2xl p-8 hover-lift h-48 flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div class="text-4xl mb-2">👩‍👧</div>
-              <p class="text-gray-700 font-medium">Mom & Daughter Team</p>
-            </div>
-          </div>
-          <div
-            class="bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-2xl p-8 hover-lift h-48 flex items-center justify-center"
-          >
-            <div class="text-center">
-              <div class="text-4xl mb-2">🐕</div>
-              <p class="text-gray-700 font-medium">Our Furry Boss</p>
+
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-atx-pink/30 to-rose-400/30 rounded-3xl blur-2xl"
+            ></div>
+            <div
+              class="relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl"
+            >
+              <div class="text-center space-y-6">
+                <div
+                  class="w-24 h-24 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center mx-auto sparkle"
+                >
+                  <span class="text-white text-4xl">👩‍💼</span>
+                </div>
+                <div>
+                  <h3 class="text-2xl font-bold gradient-text mb-2">
+                    Sarah Johnson
+                  </h3>
+                  <p class="text-gray-600 mb-4">Founder & Lead Cleaner</p>
+                  <p class="text-gray-700 italic">
+                    "Every home tells a story, and I'm here to help yours shine
+                    brighter. With 8+ years of experience and a passion for
+                    perfection, I treat every space like it's my own."
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-16 px-6 bg-white">
-      <div class="max-w-6xl mx-auto text-center">
-        <h3 class="text-4xl font-semibold mb-8 text-gray-800">
-          What Our Customers Say
-        </h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="testimonial-card p-6 rounded-2xl shadow-lg hover-lift">
-            <div class="text-yellow-400 text-xl mb-3">⭐⭐⭐⭐⭐</div>
-            <p class="text-gray-700 italic mb-4">
-              "Best coffee in Waco! The Angry Latte is my daily fuel. Love the
-              family vibe!"
-            </p>
-            <p class="text-pink-600 font-semibold">- Sarah M.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold gradient-text mb-4">
+            Get In Touch
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Ready to transform your space? Let's chat about how we can make your
+            home sparkle!
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+          <div class="space-y-8">
+            <div
+              class="bg-gradient-to-br from-atx-light to-pink-50 rounded-3xl p-8"
+            >
+              <h3 class="text-2xl font-bold text-gray-800 mb-6">
+                Why Choose ATX Cleaning?
+              </h3>
+              <div class="space-y-4">
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <span class="text-white text-sm">✓</span>
+                  </div>
+                  <span class="text-gray-700"
+                    >Free estimates with no hidden fees</span
+                  >
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <span class="text-white text-sm">✓</span>
+                  </div>
+                  <span class="text-gray-700"
+                    >Flexible scheduling that works for you</span
+                  >
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <span class="text-white text-sm">✓</span>
+                  </div>
+                  <span class="text-gray-700">100% satisfaction guarantee</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                  <div
+                    class="w-8 h-8 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center flex-shrink-0"
+                  >
+                    <span class="text-white text-sm">✓</span>
+                  </div>
+                  <span class="text-gray-700"
+                    >Trusted local Austin business</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div
+                class="bg-gradient-to-br from-rose-50 to-pink-50 rounded-2xl p-6 text-center"
+              >
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-atx-pink to-atx-rose rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <span class="text-white text-xl">📞</span>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2">Call Us</h4>
+                <p class="text-atx-dark font-semibold">(512) 555-CLEAN</p>
+              </div>
+              <div
+                class="bg-gradient-to-br from-pink-50 to-atx-light rounded-2xl p-6 text-center"
+              >
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-atx-rose to-atx-dark rounded-full flex items-center justify-center mx-auto mb-4"
+                >
+                  <span class="text-white text-xl">✉️</span>
+                </div>
+                <h4 class="font-bold text-gray-800 mb-2">Email Us</h4>
+                <p class="text-atx-dark font-semibold">hello@atxcleaning.com</p>
+              </div>
+            </div>
           </div>
-          <div class="testimonial-card p-6 rounded-2xl shadow-lg hover-lift">
-            <div class="text-yellow-400 text-xl mb-3">⭐⭐⭐⭐⭐</div>
-            <p class="text-gray-700 italic mb-4">
-              "Such a cute concept! The mom and daughter are so sweet, and their
-              coffee is incredible."
-            </p>
-            <p class="text-pink-600 font-semibold">- Mike R.</p>
-          </div>
-          <div class="testimonial-card p-6 rounded-2xl shadow-lg hover-lift">
-            <div class="text-yellow-400 text-xl mb-3">⭐⭐⭐⭐⭐</div>
-            <p class="text-gray-700 italic mb-4">
-              "Finally found my go-to coffee spot! The Cold Brew is perfection
-              and the service always makes me smile."
-            </p>
-            <p class="text-pink-600 font-semibold">- Jessica L.</p>
+
+          <div class="relative">
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-atx-pink/20 to-rose-400/20 rounded-3xl blur-2xl"
+            ></div>
+            <form
+              id="contact-form"
+              class="relative bg-white/80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl space-y-6"
+            >
+              <div>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  required
+                  class="w-full px-6 py-4 bg-white/70 border border-pink-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-atx-pink focus:border-transparent transition-all duration-300 placeholder-gray-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Your Email"
+                  required
+                  class="w-full px-6 py-4 bg-white/70 border border-pink-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-atx-pink focus:border-transparent transition-all duration-300 placeholder-gray-500"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  class="w-full px-6 py-4 bg-white/70 border border-pink-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-atx-pink focus:border-transparent transition-all duration-300 placeholder-gray-500"
+                />
+              </div>
+              <div>
+                <textarea
+                  placeholder="Tell us about your cleaning needs..."
+                  required
+                  rows="5"
+                  class="w-full px-6 py-4 bg-white/70 border border-pink-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-atx-pink focus:border-transparent transition-all duration-300 placeholder-gray-500 resize-none"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gradient-to-r from-atx-pink to-atx-rose text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-2xl hover:shadow-pink-300/50 transform hover:scale-105 transition-all duration-300"
+              >
+                Send Message ✨
+              </button>
+            </form>
           </div>
         </div>
       </div>
-    </section>
-
-    <!-- Location -->
-    <section
-      id="location"
-      class="py-16 px-6 text-center bg-gradient-to-br from-[#fdf9f4] to-[#f6f1eb] bg-pattern"
-    >
-      <h3 class="text-4xl font-semibold mb-6 text-gray-800">
-        Where to Find Us
-      </h3>
-      <div class="bg-white p-8 rounded-2xl shadow-lg max-w-2xl mx-auto">
-        <div class="text-4xl mb-4">📍</div>
-        <p class="text-gray-700 mb-4 text-lg">
-          We're parked around Waco — follow us on Instagram for daily locations
-          and special events!
-        </p>
-        <a
-          href="https://www.instagram.com/theangrycorgicoffee"
-          target="_blank"
-          class="inline-block bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full hover:from-pink-600 hover:to-purple-700 transition-all duration-200 font-semibold transform hover:scale-105 shadow-lg"
-        >
-          📱 Follow @theangrycorgicoffee
-        </a>
-        <p class="text-gray-600 mt-4 text-sm paw-print">
-          Usually found at local events, farmers markets, and around Baylor
-          campus!
-        </p>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-16 px-6 text-center bg-white">
-      <h3 class="text-4xl font-semibold mb-6 text-gray-800">Get in Touch</h3>
-      <p class="text-gray-700 mb-8 text-lg max-w-2xl mx-auto">
-        Want us at your event or pop-up? Have questions about catering? Send us
-        a bark and we'll get back to you faster than a corgi chasing treats! 🦴
-      </p>
-      <form
-        class="max-w-md mx-auto space-y-4 bg-gradient-to-br from-[#fdf9f4] to-[#fff8f4] p-8 rounded-2xl shadow-lg"
-        id="contact-form"
-      >
-        <input
-          type="text"
-          placeholder="Your Name"
-          required
-          class="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-pink-500 focus:outline-none transition-colors duration-200"
-        />
-        <input
-          type="email"
-          placeholder="Email Address"
-          required
-          class="w-full p-3 border-2 border-gray-200 rounded-xl focus:border-pink-500 focus:outline-none transition-colors duration-200"
-        />
-        <textarea
-          placeholder="Tell us about your event or just say hi!"
-          required
-          class="w-full p-3 border-2 border-gray-200 rounded-xl h-32 resize-none focus:border-pink-500 focus:outline-none transition-colors duration-200"
-        ></textarea>
-        <button
-          type="submit"
-          class="w-full bg-gradient-to-r from-pink-500 to-pink-600 text-white p-3 rounded-xl hover:from-pink-600 hover:to-pink-700 transform hover:scale-105 transition-all duration-200 font-semibold shadow-lg"
-        >
-          Send a Woof! 🐕
-        </button>
-      </form>
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-8 text-sm bg-gray-800 text-gray-300">
-      <div class="max-w-4xl mx-auto">
-        <div class="flex justify-center space-x-6 mb-4">
-          <span class="paw-print">Made with ☕ and 💖 in Waco, TX</span>
+    <footer
+      class="bg-gradient-to-br from-atx-dark to-atx-pink text-white py-12"
+    >
+      <div class="container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <div
+                class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center"
+              >
+                <span class="text-white font-bold">✨</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold">ATX Cleaning</h3>
+                <p class="text-pink-200 text-sm">Making Texas homes sparkle</p>
+              </div>
+            </div>
+            <p class="text-pink-200 leading-relaxed">
+              Your trusted local cleaning service, bringing love and care to
+              every corner of your home.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <div class="space-y-2">
+              <a
+                href="#services"
+                class="block text-pink-200 hover:text-white transition-colors duration-300"
+                >Services</a
+              >
+              <a
+                href="#about"
+                class="block text-pink-200 hover:text-white transition-colors duration-300"
+                >About</a
+              >
+              <a
+                href="#contact"
+                class="block text-pink-200 hover:text-white transition-colors duration-300"
+                >Contact</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+            <div class="space-y-2 text-pink-200">
+              <p>📞 (512) 555-CLEAN</p>
+              <p>✉️ hello@atxcleaning.com</p>
+              <p>📍 Serving Austin & Surrounding Areas</p>
+            </div>
+          </div>
         </div>
-        <p>&copy; 2025 The Angry Corgi Coffee Truck. All rights reserved.</p>
-        <p class="mt-2 text-xs text-gray-400">
-          Follow us on Instagram for daily locations and puppy pics! 📸
-        </p>
+
+        <div class="border-t border-pink-300/30 mt-8 pt-8 text-center">
+          <p class="text-pink-200">
+            &copy; 2025 ATX Cleaning. All rights reserved. Made with 💕 in
+            Texas.
+          </p>
+        </div>
       </div>
     </footer>
 
     <script>
-      // Smooth scrolling for navigation links
+      // Simple form handling
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert(
+            "Thank you for your message! We'll get back to you within 24 hours. ✨"
+          );
+        });
+
+      // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -412,77 +647,34 @@
         });
       });
 
-      // Form submission handling
-      document
-        .getElementById("contact-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
+      // Add scroll animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
 
-          // Get form elements
-          const button = this.querySelector('button[type="submit"]');
-          const originalText = button.textContent;
-
-          // Show loading state
-          button.textContent = "Sending... 🐕";
-          button.disabled = true;
-
-          // Simulate form submission (replace with actual form handling)
-          setTimeout(() => {
-            button.textContent = "Message Sent! 🎉";
-            button.style.background =
-              "linear-gradient(to right, #10b981, #059669)";
-
-            setTimeout(() => {
-              button.textContent = originalText;
-              button.disabled = false;
-              button.style.background = "";
-              this.reset();
-            }, 3000);
-          }, 1500);
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
         });
+      }, observerOptions);
 
-      // Add some interactive elements
-      document.addEventListener("DOMContentLoaded", function () {
-        // Add click handler to menu items for fun interaction
-        const menuCards = document.querySelectorAll(".menu-item-card");
-        menuCards.forEach((card) => {
-          card.addEventListener("click", function () {
-            const emoji = this.querySelector("div").textContent;
-            // Create temporary floating emoji
-            const floatingEmoji = document.createElement("div");
-            floatingEmoji.textContent = emoji;
-            floatingEmoji.style.position = "fixed";
-            floatingEmoji.style.fontSize = "2rem";
-            floatingEmoji.style.pointerEvents = "none";
-            floatingEmoji.style.zIndex = "9999";
-            floatingEmoji.style.left = Math.random() * window.innerWidth + "px";
-            floatingEmoji.style.top = window.innerHeight + "px";
-            floatingEmoji.style.animation = "float-up 3s ease-out forwards";
-
-            document.body.appendChild(floatingEmoji);
-
-            setTimeout(() => {
-              floatingEmoji.remove();
-            }, 3000);
-          });
-        });
+      // Observe elements for scroll animations
+      document.querySelectorAll("section").forEach((section) => {
+        section.style.opacity = "0";
+        section.style.transform = "translateY(30px)";
+        section.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        observer.observe(section);
       });
 
-      // Add CSS for floating emoji animation
-      const style = document.createElement("style");
-      style.textContent = `
-        @keyframes float-up {
-          0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100vh) rotate(360deg);
-            opacity: 0;
-          }
-        }
-      `;
-      document.head.appendChild(style);
+      // Hero section should be visible immediately
+      document.querySelector(".hero") &&
+        (document.querySelector(".hero").style.opacity = "1");
+      document.querySelector(".hero") &&
+        (document.querySelector(".hero").style.transform = "translateY(0)");
     </script>
   </body>
 </html>
